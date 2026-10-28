@@ -8,8 +8,12 @@ GitHub Actions에서 실행 → data/*.csv 커밋.
 import io
 import json
 import os
+import signal
 import sys
 import time
+import warnings
+
+warnings.filterwarnings("ignore")
 from datetime import datetime, timezone
 
 import pandas as pd
@@ -39,13 +43,35 @@ FRED = ["BAMLH0A0HYM2", "BAMLC0A0CM", "DGS10", "DGS2", "T10Y2Y", "DGS3MO"]
 FG_URL = "https://raw.githubusercontent.com/whit3rabbit/fear-greed-data/main/fear-greed.csv"
 
 
+class Timeout(Exception):
+    pass
+
+
+def _alarm(signum, frame):
+    raise Timeout("hard timeout")
+
+
+signal.signal(signal.SIGALRM, _alarm)
+
+
+def with_timeout(sec, fn, *a, **k):
+    """요청이 멈춰도 sec초 뒤 강제 중단 (Linux 전용)"""
+    signal.alarm(sec)
+    try:
+        return fn(*a, **k)
+    finally:
+        signal.alarm(0)
+
+
 def fetch_yahoo(ticker, tries=3):
     for i in range(tries):
         try:
-            df = yf.Ticker(ticker).history(start=START, interval="1d", auto_adjust=False)
+            df = with_timeout(60, yf.Ticker(ticker).history, start=START, interval="1d",
+                              auto_adjust=False, timeout=30)
             if df is not None and len(df) > 0:
                 df.index = pd.to_datetime(df.index).tz_localize(None).normalize()
                 return df
+            print(f"  ! {ticker} try{i+1}: empty")
         except Exception as e:
             print(f"  ! {ticker} try{i+1}: {e}")
         time.sleep(3 * (i + 1))
@@ -56,19 +82,19 @@ def fetch_fred(series):
     key = os.environ.get("FRED_API_KEY", "").strip()
     if key:
         try:
-            r = requests.get("https://api.stlouisfed.org/fred/series/observations",
+            r = with_timeout(60, requests.get, "https://api.stlouisfed.org/fred/series/observations",
                              params={"series_id": series, "api_key": key, "file_type": "json",
-                                     "observation_start": START}, timeout=30)
+                                     "observation_start": START}, timeout=(10, 30))
             r.raise_for_status()
             obs = r.json()["observations"]
             s = pd.Series({pd.Timestamp(o["date"]): o["value"] for o in obs})
             return pd.to_numeric(s, errors="coerce").rename(series), "api"
         except Exception as e:
             print(f"  ! FRED API {series}: {e} → fredgraph 시도")
-    for i in range(3):
+    for i in range(2):
         try:
-            r = requests.get("https://fred.stlouisfed.org/graph/fredgraph.csv",
-                             params={"id": series, "cosd": START}, headers=UA, timeout=60)
+            r = with_timeout(60, requests.get, "https://fred.stlouisfed.org/graph/fredgraph.csv",
+                             params={"id": series, "cosd": START}, headers=UA, timeout=(10, 40))
             r.raise_for_status()
             df = pd.read_csv(io.StringIO(r.text))
             s = pd.Series(pd.to_numeric(df.iloc[:, 1], errors="coerce").values,
@@ -125,7 +151,7 @@ def main():
         f.to_csv(f"{OUT}/fred.csv")
 
     try:
-        r = requests.get(FG_URL, timeout=30)
+        r = with_timeout(60, requests.get, FG_URL, timeout=(10, 30))
         r.raise_for_status()
         g = pd.read_csv(io.StringIO(r.text))
         g.columns = ["date", "fear_greed", "rating"][: len(g.columns)]
