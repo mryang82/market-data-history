@@ -38,7 +38,8 @@ YAHOO = {
     "DXY": "DX-Y.NYB", "TNX": "^TNX",
 }
 
-FRED = ["BAMLH0A0HYM2", "BAMLC0A0CM", "DGS10", "DGS2", "T10Y2Y", "DGS3MO"]
+# ICE BofA(HY/IG OAS)는 FRED에서 최근 3년만 제공 → 장기 백테스트용 신용 대체지표로 무디스 BAA/AAA 스프레드 추가
+FRED = ["BAMLH0A0HYM2", "BAMLC0A0CM", "BAA10Y", "AAA10Y", "DGS10", "DGS2", "T10Y2Y", "DGS3MO"]
 
 FG_URL = "https://raw.githubusercontent.com/whit3rabbit/fear-greed-data/main/fear-greed.csv"
 
