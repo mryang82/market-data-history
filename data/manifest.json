@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-28T13:40:05+00:00",
+  "updated_utc": "2026-10-28T14:02:27+00:00",
   "start": "2010-01-01",
   "yahoo": {
     "SPX": {
@@ -26,9 +26,9 @@
     "RUT": {
       "ticker": "^RUT",
       "status": "ok",
-      "rows": 4230,
+      "rows": 4231,
       "first": "2010-01-04",
-      "last": "2026-10-27"
+      "last": "2026-10-28"
     },
     "VIX": {
       "ticker": "^VIX",
@@ -40,30 +40,30 @@
     "VIX3M": {
       "ticker": "^VIX3M",
       "status": "ok",
-      "rows": 4230,
+      "rows": 4231,
       "first": "2010-01-04",
-      "last": "2026-10-27"
+      "last": "2026-10-28"
     },
     "VIX9D": {
       "ticker": "^VIX9D",
       "status": "ok",
-      "rows": 3977,
+      "rows": 3978,
       "first": "2011-01-04",
-      "last": "2026-10-27"
+      "last": "2026-10-28"
     },
     "VVIX": {
       "ticker": "^VVIX",
       "status": "ok",
-      "rows": 4221,
+      "rows": 4222,
       "first": "2010-01-04",
-      "last": "2026-10-27"
+      "last": "2026-10-28"
     },
     "VXN": {
       "ticker": "^VXN",
       "status": "ok",
-      "rows": 4230,
+      "rows": 4231,
       "first": "2010-01-04",
-      "last": "2026-10-27"
+      "last": "2026-10-28"
     },
     "SKEW": {
       "ticker": "^SKEW",
@@ -243,6 +243,30 @@
       "status": "ok",
       "rows": 8768,
       "first": "1992-01-02"
+    },
+    "NDX": {
+      "ticker": "^NDX",
+      "status": "ok",
+      "rows": 10349,
+      "first": "1985-10-01"
+    },
+    "IXIC": {
+      "ticker": "^IXIC",
+      "status": "ok",
+      "rows": 14050,
+      "first": "1971-02-05"
+    },
+    "QQQ": {
+      "ticker": "QQQ",
+      "status": "ok",
+      "rows": 6953,
+      "first": "1999-03-10"
+    },
+    "VXN": {
+      "ticker": "^VXN",
+      "status": "ok",
+      "rows": 6480,
+      "first": "2001-01-23"
     },
     "UNRATE": {
       "status": "ok",
