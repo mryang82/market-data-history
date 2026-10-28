@@ -15,7 +15,7 @@ concurrency:
 jobs:
   fetch:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
 
@@ -30,6 +30,7 @@ jobs:
       - name: Fetch history
         env:
           FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          PYTHONUNBUFFERED: '1'
         run: python fetch_history.py
 
       - name: Commit and push
