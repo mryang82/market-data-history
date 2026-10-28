@@ -42,7 +42,8 @@ YAHOO = {
 FRED = ["BAMLH0A0HYM2", "BAMLC0A0CM", "BAA10Y", "AAA10Y", "DGS10", "DGS2", "T10Y2Y", "DGS3MO"]
 
 # 장기 검증용 (2026-10-28): 큰 하락·큰 상승 대비 연구에 1990년대 이전 위기 포함 필요
-LONG_YAHOO = {"SPX": "^GSPC", "SPXTR": "^SP500TR", "VIX": "^VIX", "DJI": "^DJI"}
+LONG_YAHOO = {"SPX": "^GSPC", "SPXTR": "^SP500TR", "VIX": "^VIX", "DJI": "^DJI",
+              "NDX": "^NDX", "IXIC": "^IXIC", "QQQ": "QQQ", "VXN": "^VXN"}
 LONG_FRED = ["UNRATE", "ICSA", "BAA10Y", "AAA10Y", "T10Y2Y", "T10Y3M", "DGS3MO", "TB3MS",
              "NFCI", "INDPRO", "USREC", "PAYEMS", "CPIAUCSL"]
 LONG_START = "1927-01-01"
