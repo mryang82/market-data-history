@@ -41,6 +41,12 @@ YAHOO = {
 # ICE BofA(HY/IG OAS)는 FRED에서 최근 3년만 제공 → 장기 백테스트용 신용 대체지표로 무디스 BAA/AAA 스프레드 추가
 FRED = ["BAMLH0A0HYM2", "BAMLC0A0CM", "BAA10Y", "AAA10Y", "DGS10", "DGS2", "T10Y2Y", "DGS3MO"]
 
+# 장기 검증용 (2026-10-28): 큰 하락·큰 상승 대비 연구에 1990년대 이전 위기 포함 필요
+LONG_YAHOO = {"SPX": "^GSPC", "SPXTR": "^SP500TR", "VIX": "^VIX", "DJI": "^DJI"}
+LONG_FRED = ["UNRATE", "ICSA", "BAA10Y", "AAA10Y", "T10Y2Y", "T10Y3M", "DGS3MO", "TB3MS",
+             "NFCI", "INDPRO", "USREC", "PAYEMS", "CPIAUCSL"]
+LONG_START = "1927-01-01"
+
 FG_URL = "https://raw.githubusercontent.com/whit3rabbit/fear-greed-data/main/fear-greed.csv"
 
 
@@ -64,10 +70,10 @@ def with_timeout(sec, fn, *a, **k):
         signal.alarm(0)
 
 
-def fetch_yahoo(ticker, tries=3):
+def fetch_yahoo(ticker, tries=3, start=None):
     for i in range(tries):
         try:
-            df = with_timeout(60, yf.Ticker(ticker).history, start=START, interval="1d",
+            df = with_timeout(60, yf.Ticker(ticker).history, start=start or START, interval="1d",
                               auto_adjust=False, timeout=30)
             if df is not None and len(df) > 0:
                 df.index = pd.to_datetime(df.index).tz_localize(None).normalize()
@@ -79,13 +85,14 @@ def fetch_yahoo(ticker, tries=3):
     return None
 
 
-def fetch_fred(series):
+def fetch_fred(series, start=None):
+    start = start or START
     key = os.environ.get("FRED_API_KEY", "").strip()
     if key:
         try:
             r = with_timeout(60, requests.get, "https://api.stlouisfed.org/fred/series/observations",
                              params={"series_id": series, "api_key": key, "file_type": "json",
-                                     "observation_start": START}, timeout=(10, 30))
+                                     "observation_start": start}, timeout=(10, 30))
             r.raise_for_status()
             obs = r.json()["observations"]
             s = pd.Series({pd.Timestamp(o["date"]): o["value"] for o in obs})
@@ -95,7 +102,7 @@ def fetch_fred(series):
     for i in range(2):
         try:
             r = with_timeout(60, requests.get, "https://fred.stlouisfed.org/graph/fredgraph.csv",
-                             params={"id": series, "cosd": START}, headers=UA, timeout=(10, 40))
+                             params={"id": series, "cosd": start}, headers=UA, timeout=(10, 40))
             r.raise_for_status()
             df = pd.read_csv(io.StringIO(r.text))
             s = pd.Series(pd.to_numeric(df.iloc[:, 1], errors="coerce").values,
@@ -162,6 +169,42 @@ def main():
     except Exception as e:
         manifest["fear_greed"] = {"status": "fail", "error": str(e)}
         print(f"✗ F&G: {e}")
+
+    # ── 장기 히스토리 (실패해도 기존 일일 데이터에는 영향 없음) ──
+    manifest["long"] = {}
+    try:
+        lc = {}
+        for name, tk in LONG_YAHOO.items():
+            df = fetch_yahoo(tk, start=LONG_START)
+            if df is None:
+                manifest["long"][name] = {"ticker": tk, "status": "fail"}
+                continue
+            lc[name] = df["Close"]
+            manifest["long"][name] = {"ticker": tk, "status": "ok", "rows": int(len(df)),
+                                      "first": str(df.index[0].date())}
+            print(f"✓ long {name} {len(df)} rows from {df.index[0].date()}")
+        if lc:
+            L = pd.DataFrame(lc).sort_index()
+            L.index.name = "date"
+            L.round(4).to_csv(f"{OUT}/long_yahoo.csv")
+        lf = []
+        for s in LONG_FRED:
+            ser, how = fetch_fred(s, start=LONG_START)
+            if ser is None:
+                manifest["long"][s] = {"status": "fail"}
+                continue
+            ser = ser.dropna()
+            lf.append(ser)
+            manifest["long"][s] = {"status": "ok", "via": how, "rows": int(len(ser)),
+                                   "first": str(ser.index[0].date())}
+            print(f"✓ long FRED {s} from {ser.index[0].date()}")
+        if lf:
+            f2 = pd.concat(lf, axis=1).sort_index()
+            f2.index.name = "date"
+            f2.to_csv(f"{OUT}/long_fred.csv")
+    except Exception as e:
+        manifest["long"]["error"] = str(e)
+        print(f"✗ long history: {e}")
 
     with open(f"{OUT}/manifest.json", "w") as fh:
         json.dump(manifest, fh, indent=2, ensure_ascii=False)
