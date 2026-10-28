@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-28T07:31:56+00:00",
+  "updated_utc": "2026-10-28T07:33:56+00:00",
   "start": "2010-01-01",
   "yahoo": {
     "SPX": {
@@ -47,8 +47,8 @@
     "VIX9D": {
       "ticker": "^VIX9D",
       "status": "ok",
-      "rows": 3978,
-      "first": "2011-01-03",
+      "rows": 3977,
+      "first": "2011-01-04",
       "last": "2026-10-27"
     },
     "VVIX": {
@@ -175,6 +175,18 @@
       "status": "ok",
       "via": "api",
       "rows": 783,
+      "last": "2026-10-26"
+    },
+    "BAA10Y": {
+      "status": "ok",
+      "via": "api",
+      "rows": 4201,
+      "last": "2026-10-26"
+    },
+    "AAA10Y": {
+      "status": "ok",
+      "via": "api",
+      "rows": 4201,
       "last": "2026-10-26"
     },
     "DGS10": {
