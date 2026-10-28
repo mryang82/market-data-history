@@ -1,0 +1,192 @@
+{
+  "updated_utc": "2026-10-28T06:50:31+00:00",
+  "start": "2010-01-01",
+  "yahoo": {
+    "SPX": {
+      "ticker": "^GSPC",
+      "status": "ok",
+      "rows": 4230,
+      "first": "2010-01-04",
+      "last": "2026-10-27"
+    },
+    "NDX": {
+      "ticker": "^NDX",
+      "status": "ok",
+      "rows": 4230,
+      "first": "2010-01-04",
+      "last": "2026-10-27"
+    },
+    "IXIC": {
+      "ticker": "^IXIC",
+      "status": "ok",
+      "rows": 4230,
+      "first": "2010-01-04",
+      "last": "2026-10-27"
+    },
+    "RUT": {
+      "ticker": "^RUT",
+      "status": "ok",
+      "rows": 4230,
+      "first": "2010-01-04",
+      "last": "2026-10-27"
+    },
+    "VIX": {
+      "ticker": "^VIX",
+      "status": "ok",
+      "rows": 4232,
+      "first": "2010-01-04",
+      "last": "2026-10-27"
+    },
+    "VIX3M": {
+      "ticker": "^VIX3M",
+      "status": "ok",
+      "rows": 4230,
+      "first": "2010-01-04",
+      "last": "2026-10-27"
+    },
+    "VIX9D": {
+      "ticker": "^VIX9D",
+      "status": "ok",
+      "rows": 3977,
+      "first": "2011-01-04",
+      "last": "2026-10-27"
+    },
+    "VVIX": {
+      "ticker": "^VVIX",
+      "status": "ok",
+      "rows": 4221,
+      "first": "2010-01-04",
+      "last": "2026-10-27"
+    },
+    "VXN": {
+      "ticker": "^VXN",
+      "status": "ok",
+      "rows": 4230,
+      "first": "2010-01-04",
+      "last": "2026-10-27"
+    },
+    "SKEW": {
+      "ticker": "^SKEW",
+      "status": "ok",
+      "rows": 4168,
+      "first": "2010-01-04",
+      "last": "2026-10-27"
+    },
+    "QQQ": {
+      "ticker": "QQQ",
+      "status": "ok",
+      "rows": 4230,
+      "first": "2010-01-04",
+      "last": "2026-10-27"
+    },
+    "SPY": {
+      "ticker": "SPY",
+      "status": "ok",
+      "rows": 4230,
+      "first": "2010-01-04",
+      "last": "2026-10-27"
+    },
+    "SOXX": {
+      "ticker": "SOXX",
+      "status": "ok",
+      "rows": 4230,
+      "first": "2010-01-04",
+      "last": "2026-10-27"
+    },
+    "SMH": {
+      "ticker": "SMH",
+      "status": "ok",
+      "rows": 4230,
+      "first": "2010-01-04",
+      "last": "2026-10-27"
+    },
+    "HYG": {
+      "ticker": "HYG",
+      "status": "ok",
+      "rows": 4230,
+      "first": "2010-01-04",
+      "last": "2026-10-27"
+    },
+    "LQD": {
+      "ticker": "LQD",
+      "status": "ok",
+      "rows": 4230,
+      "first": "2010-01-04",
+      "last": "2026-10-27"
+    },
+    "TLT": {
+      "ticker": "TLT",
+      "status": "ok",
+      "rows": 4230,
+      "first": "2010-01-04",
+      "last": "2026-10-27"
+    },
+    "XLP": {
+      "ticker": "XLP",
+      "status": "ok",
+      "rows": 4230,
+      "first": "2010-01-04",
+      "last": "2026-10-27"
+    },
+    "XLY": {
+      "ticker": "XLY",
+      "status": "ok",
+      "rows": 4230,
+      "first": "2010-01-04",
+      "last": "2026-10-27"
+    },
+    "KRE": {
+      "ticker": "KRE",
+      "status": "ok",
+      "rows": 4230,
+      "first": "2010-01-04",
+      "last": "2026-10-27"
+    },
+    "IWM": {
+      "ticker": "IWM",
+      "status": "ok",
+      "rows": 4230,
+      "first": "2010-01-04",
+      "last": "2026-10-27"
+    },
+    "DXY": {
+      "ticker": "DX-Y.NYB",
+      "status": "ok",
+      "rows": 4232,
+      "first": "2010-01-04",
+      "last": "2026-10-28"
+    },
+    "TNX": {
+      "ticker": "^TNX",
+      "status": "ok",
+      "rows": 4228,
+      "first": "2010-01-04",
+      "last": "2026-10-27"
+    }
+  },
+  "fred": {
+    "BAMLH0A0HYM2": {
+      "status": "fail"
+    },
+    "BAMLC0A0CM": {
+      "status": "fail"
+    },
+    "DGS10": {
+      "status": "fail"
+    },
+    "DGS2": {
+      "status": "fail"
+    },
+    "T10Y2Y": {
+      "status": "fail"
+    },
+    "DGS3MO": {
+      "status": "fail"
+    }
+  },
+  "fear_greed": {
+    "status": "ok",
+    "rows": 3955,
+    "last": "2026-10-27"
+  }
+}
