@@ -1,167 +1,167 @@
 {
-  "updated_utc": "2026-11-24T06:58:43+00:00",
+  "updated_utc": "2026-11-25T05:28:08+00:00",
   "start": "2010-01-01",
   "yahoo": {
     "SPX": {
       "ticker": "^GSPC",
       "status": "ok",
-      "rows": 4249,
+      "rows": 4250,
       "first": "2010-01-04",
-      "last": "2026-11-23"
+      "last": "2026-11-24"
     },
     "NDX": {
       "ticker": "^NDX",
       "status": "ok",
-      "rows": 4249,
+      "rows": 4250,
       "first": "2010-01-04",
-      "last": "2026-11-23"
+      "last": "2026-11-24"
     },
     "IXIC": {
       "ticker": "^IXIC",
       "status": "ok",
-      "rows": 4249,
+      "rows": 4250,
       "first": "2010-01-04",
-      "last": "2026-11-23"
+      "last": "2026-11-24"
     },
     "RUT": {
       "ticker": "^RUT",
       "status": "ok",
-      "rows": 4249,
+      "rows": 4250,
       "first": "2010-01-04",
-      "last": "2026-11-23"
+      "last": "2026-11-24"
     },
     "VIX": {
       "ticker": "^VIX",
       "status": "ok",
-      "rows": 4251,
+      "rows": 4252,
       "first": "2010-01-04",
-      "last": "2026-11-23"
+      "last": "2026-11-24"
     },
     "VIX3M": {
       "ticker": "^VIX3M",
       "status": "ok",
-      "rows": 4249,
+      "rows": 4250,
       "first": "2010-01-04",
-      "last": "2026-11-23"
+      "last": "2026-11-24"
     },
     "VIX9D": {
       "ticker": "^VIX9D",
       "status": "ok",
       "rows": 3997,
-      "first": "2011-01-03",
-      "last": "2026-11-23"
+      "first": "2011-01-04",
+      "last": "2026-11-24"
     },
     "VVIX": {
       "ticker": "^VVIX",
       "status": "ok",
-      "rows": 4240,
+      "rows": 4241,
       "first": "2010-01-04",
-      "last": "2026-11-23"
+      "last": "2026-11-24"
     },
     "VXN": {
       "ticker": "^VXN",
       "status": "ok",
-      "rows": 4249,
+      "rows": 4250,
       "first": "2010-01-04",
-      "last": "2026-11-23"
+      "last": "2026-11-24"
     },
     "SKEW": {
       "ticker": "^SKEW",
       "status": "ok",
-      "rows": 4187,
+      "rows": 4188,
       "first": "2010-01-04",
-      "last": "2026-11-23"
+      "last": "2026-11-24"
     },
     "QQQ": {
       "ticker": "QQQ",
       "status": "ok",
-      "rows": 4249,
+      "rows": 4250,
       "first": "2010-01-04",
-      "last": "2026-11-23"
+      "last": "2026-11-24"
     },
     "SPY": {
       "ticker": "SPY",
       "status": "ok",
-      "rows": 4249,
+      "rows": 4250,
       "first": "2010-01-04",
-      "last": "2026-11-23"
+      "last": "2026-11-24"
     },
     "SOXX": {
       "ticker": "SOXX",
       "status": "ok",
-      "rows": 4249,
+      "rows": 4250,
       "first": "2010-01-04",
-      "last": "2026-11-23"
+      "last": "2026-11-24"
     },
     "SMH": {
       "ticker": "SMH",
       "status": "ok",
-      "rows": 4249,
+      "rows": 4250,
       "first": "2010-01-04",
-      "last": "2026-11-23"
+      "last": "2026-11-24"
     },
     "HYG": {
       "ticker": "HYG",
       "status": "ok",
-      "rows": 4249,
+      "rows": 4250,
       "first": "2010-01-04",
-      "last": "2026-11-23"
+      "last": "2026-11-24"
     },
     "LQD": {
       "ticker": "LQD",
       "status": "ok",
-      "rows": 4249,
+      "rows": 4250,
       "first": "2010-01-04",
-      "last": "2026-11-23"
+      "last": "2026-11-24"
     },
     "TLT": {
       "ticker": "TLT",
       "status": "ok",
-      "rows": 4249,
+      "rows": 4250,
       "first": "2010-01-04",
-      "last": "2026-11-23"
+      "last": "2026-11-24"
     },
     "XLP": {
       "ticker": "XLP",
       "status": "ok",
-      "rows": 4249,
+      "rows": 4250,
       "first": "2010-01-04",
-      "last": "2026-11-23"
+      "last": "2026-11-24"
     },
     "XLY": {
       "ticker": "XLY",
       "status": "ok",
-      "rows": 4249,
+      "rows": 4250,
       "first": "2010-01-04",
-      "last": "2026-11-23"
+      "last": "2026-11-24"
     },
     "KRE": {
       "ticker": "KRE",
       "status": "ok",
-      "rows": 4249,
+      "rows": 4250,
       "first": "2010-01-04",
-      "last": "2026-11-23"
+      "last": "2026-11-24"
     },
     "IWM": {
       "ticker": "IWM",
       "status": "ok",
-      "rows": 4249,
+      "rows": 4250,
       "first": "2010-01-04",
-      "last": "2026-11-23"
+      "last": "2026-11-24"
     },
     "DXY": {
       "ticker": "DX-Y.NYB",
       "status": "ok",
-      "rows": 4251,
+      "rows": 4252,
       "first": "2010-01-04",
-      "last": "2026-11-24"
+      "last": "2026-11-25"
     },
     "TNX": {
       "ticker": "^TNX",
       "status": "ok",
-      "rows": 4247,
+      "rows": 4248,
       "first": "2010-01-04",
-      "last": "2026-11-23"
+      "last": "2026-11-24"
     }
   },
   "fred": {
@@ -169,49 +169,49 @@
       "status": "ok",
       "via": "api",
       "rows": 784,
-      "last": "2026-11-20"
+      "last": "2026-11-23"
     },
     "BAMLC0A0CM": {
       "status": "ok",
       "via": "api",
       "rows": 783,
-      "last": "2026-11-20"
+      "last": "2026-11-23"
     },
     "BAA10Y": {
       "status": "ok",
       "via": "api",
-      "rows": 4219,
-      "last": "2026-11-20"
+      "rows": 4220,
+      "last": "2026-11-23"
     },
     "AAA10Y": {
       "status": "ok",
       "via": "api",
-      "rows": 4219,
-      "last": "2026-11-20"
+      "rows": 4220,
+      "last": "2026-11-23"
     },
     "DGS10": {
-      "status": "ok",
-      "via": "api",
-      "rows": 4224,
-      "last": "2026-11-20"
-    },
-    "DGS2": {
-      "status": "ok",
-      "via": "api",
-      "rows": 4224,
-      "last": "2026-11-20"
-    },
-    "T10Y2Y": {
       "status": "ok",
       "via": "api",
       "rows": 4225,
       "last": "2026-11-23"
     },
+    "DGS2": {
+      "status": "ok",
+      "via": "api",
+      "rows": 4225,
+      "last": "2026-11-23"
+    },
+    "T10Y2Y": {
+      "status": "ok",
+      "via": "api",
+      "rows": 4226,
+      "last": "2026-11-24"
+    },
     "DGS3MO": {
       "status": "ok",
       "via": "api",
-      "rows": 4224,
-      "last": "2026-11-20"
+      "rows": 4225,
+      "last": "2026-11-23"
     }
   },
   "fear_greed": {
@@ -223,49 +223,49 @@
     "SPX": {
       "ticker": "^GSPC",
       "status": "ok",
-      "rows": 24842,
+      "rows": 24843,
       "first": "1927-12-30"
     },
     "SPXTR": {
       "ticker": "^SP500TR",
       "status": "ok",
-      "rows": 9797,
+      "rows": 9798,
       "first": "1988-01-04"
     },
     "VIX": {
       "ticker": "^VIX",
       "status": "ok",
-      "rows": 9294,
+      "rows": 9295,
       "first": "1990-01-02"
     },
     "DJI": {
       "ticker": "^DJI",
       "status": "ok",
-      "rows": 8786,
+      "rows": 8787,
       "first": "1992-01-02"
     },
     "NDX": {
       "ticker": "^NDX",
       "status": "ok",
-      "rows": 10367,
+      "rows": 10368,
       "first": "1985-10-01"
     },
     "IXIC": {
       "ticker": "^IXIC",
       "status": "ok",
-      "rows": 14068,
+      "rows": 14069,
       "first": "1971-02-05"
     },
     "QQQ": {
       "ticker": "QQQ",
       "status": "ok",
-      "rows": 6971,
+      "rows": 6972,
       "first": "1999-03-10"
     },
     "VXN": {
       "ticker": "^VXN",
       "status": "ok",
-      "rows": 6498,
+      "rows": 6499,
       "first": "2001-01-23"
     },
     "UNRATE": {
@@ -283,31 +283,31 @@
     "BAA10Y": {
       "status": "ok",
       "via": "api",
-      "rows": 10222,
+      "rows": 10223,
       "first": "1986-01-02"
     },
     "AAA10Y": {
       "status": "ok",
       "via": "api",
-      "rows": 10969,
+      "rows": 10970,
       "first": "1983-01-03"
     },
     "T10Y2Y": {
       "status": "ok",
       "via": "api",
-      "rows": 12616,
+      "rows": 12617,
       "first": "1976-06-01"
     },
     "T10Y3M": {
       "status": "ok",
       "via": "api",
-      "rows": 11225,
+      "rows": 11226,
       "first": "1982-01-04"
     },
     "DGS3MO": {
       "status": "ok",
       "via": "api",
-      "rows": 11305,
+      "rows": 11306,
       "first": "1981-09-01"
     },
     "TB3MS": {
