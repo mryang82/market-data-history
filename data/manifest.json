@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-26T05:09:02+00:00",
+  "updated_utc": "2026-11-27T05:06:15+00:00",
   "start": "2010-01-01",
   "yahoo": {
     "SPX": {
@@ -33,9 +33,9 @@
     "VIX": {
       "ticker": "^VIX",
       "status": "ok",
-      "rows": 4253,
+      "rows": 4254,
       "first": "2010-01-04",
-      "last": "2026-11-25"
+      "last": "2026-11-26"
     },
     "VIX3M": {
       "ticker": "^VIX3M",
@@ -47,8 +47,8 @@
     "VIX9D": {
       "ticker": "^VIX9D",
       "status": "ok",
-      "rows": 3999,
-      "first": "2011-01-03",
+      "rows": 3998,
+      "first": "2011-01-04",
       "last": "2026-11-25"
     },
     "VVIX": {
@@ -152,9 +152,9 @@
     "DXY": {
       "ticker": "DX-Y.NYB",
       "status": "ok",
-      "rows": 4252,
+      "rows": 4253,
       "first": "2010-01-04",
-      "last": "2026-11-25"
+      "last": "2026-11-26"
     },
     "TNX": {
       "ticker": "^TNX",
@@ -216,8 +216,8 @@
   },
   "fear_greed": {
     "status": "ok",
-    "rows": 3976,
-    "last": "2026-11-25"
+    "rows": 3977,
+    "last": "2026-11-26"
   },
   "long": {
     "SPX": {
@@ -235,7 +235,7 @@
     "VIX": {
       "ticker": "^VIX",
       "status": "ok",
-      "rows": 9296,
+      "rows": 9297,
       "first": "1990-01-02"
     },
     "DJI": {
